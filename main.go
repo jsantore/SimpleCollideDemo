@@ -54,9 +54,7 @@ func main() {
 	if err != nil {
 		fmt.Println("Error loading player image:", err)
 	}
-
 	var mapAsIntSlice [][]int = makeCollideMap(gameMap)
-	fmt.Println("mapAsIntSlice:", mapAsIntSlice)
 	oneLevelGame := mapGame{
 		Level:         gameMap,
 		tileHash:      ebitenImageMap,
@@ -65,9 +63,6 @@ func main() {
 		demoPlayer:    player{x: 200, y: 150, pict: playerPict},
 	}
 	buildDrawableLevel(&oneLevelGame)
-	fmt.Println("tilesets:", gameMap.Tilesets[0].Tiles)
-	//fmt.Println("layers:", gameMap.Layers[0].Tiles)
-	fmt.Print("type:", fmt.Sprintf("%T", gameMap.Layers[0].Tiles[0]))
 	err = ebiten.RunGame(&oneLevelGame)
 	if err != nil {
 		fmt.Println("Couldn't run game:", err)

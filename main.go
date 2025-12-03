@@ -143,5 +143,4 @@ func getPlayerInput() (dX, dY float64) {
 		dX = 3
 	}
 	return dX, dY
-
 }
